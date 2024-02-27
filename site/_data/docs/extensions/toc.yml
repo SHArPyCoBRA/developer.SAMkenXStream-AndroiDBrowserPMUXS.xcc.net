@@ -1,0 +1,154 @@
+- url: /docs/extensions/mv3
+- url: /docs/extensions/whatsnew
+- url:
+- title: i18n.docs.extensions.support
+  sections:
+  - url: /docs/extensions/support-feedback/
+  - url: /docs/extensions/support-feedback/getHelp
+  - url: /docs/extensions/support-feedback/file-a-bug
+  - url: /docs/extensions/support-feedback/submit-a-feature-request
+  - url: /docs/extensions/support-feedback/find-a-bug
+- title: i18n.docs.extensions.get-started
+  sections:
+  - url: /docs/extensions/mv3/getstarted/
+  - url: /docs/extensions/mv3/getstarted/extensions-101
+  - url: /docs/extensions/mv3/getstarted/development-basics
+  - url: /docs/extensions/mv3/getstarted/tut-reading-time
+  - url: /docs/extensions/mv3/getstarted/tut-focus-mode
+  - url: /docs/extensions/mv3/getstarted/tut-tabs-manager
+  - url: /docs/extensions/mv3/getstarted/tut-quick-reference
+- title: i18n.docs.extensions.mv3
+  sections:
+    - url: /docs/extensions/mv3/intro
+    - url: /docs/extensions/mv3/intro/platform-vision
+    - url: /docs/extensions/mv3/intro/mv3-overview
+- title: i18n.docs.extensions.overview
+  sections:
+    - url: /docs/extensions/mv3/themes
+    - url: /docs/extensions/mv3/faq
+- title: i18n.docs.extensions.migrating
+  sections:
+    - url: /docs/extensions/migrating/
+    - url: /docs/extensions/migrating/checklist
+    - url: /docs/extensions/migrating/manifest
+    - url: /docs/extensions/migrating/to-service-workers
+    - url: /docs/extensions/migrating/api-calls
+    - url: /docs/extensions/migrating/blocking-web-requests
+    - url: /docs/extensions/migrating/improve-security
+    - url: /docs/extensions/migrating/publish-mv3
+    - url: /docs/extensions/migrating/mv2-sunset
+    - url: /docs/extensions/migrating/known-issues
+- url: /docs/extensions/reference
+- url: /docs/extensions/samples
+  title: i18n.docs.extensions.samples
+  description: i18n.docs.extensions.samples_description
+- title: i18n.docs.extensions.develop
+  sections:
+    - url: /docs/extensions/mv3/devguide
+    - url: /docs/extensions/mv3/manifest
+    - url: /docs/extensions/mv3/architecture-overview
+    - url: /docs/extensions/mv3/declare_permissions
+    - url: /docs/extensions/mv3/service_workers
+    - url: /docs/extensions/mv3/user_interface
+    - url: /docs/extensions/mv3/tut_debugging
+- title: i18n.docs.extensions.service_workers
+  sections:
+    - url: /docs/extensions/mv3/service_workers
+    - url: /docs/extensions/mv3/service_workers/basics
+    - url: /docs/extensions/mv3/service_workers/service-worker-lifecycle
+    - url: /docs/extensions/mv3/service_workers/events
+    - url: /docs/extensions/mv3/tut_websockets
+- title: i18n.docs.extensions.indepth-core
+  sections:
+    - url: /docs/extensions/mv3/messaging
+    - url: /docs/extensions/mv3/content_scripts
+    - url: /docs/extensions/mv3/match_patterns
+    - url: /docs/extensions/mv3/promises
+    - url: /docs/extensions/mv3/cross-origin-isolation
+    - url: /docs/extensions/mv3/storage-and-cookies
+- title: i18n.docs.extensions.indepth-security
+  sections:
+    - url: /docs/extensions/mv3/xhr
+    - url: /docs/extensions/mv3/sandboxingEval
+- title: i18n.docs.extensions.indepth-other
+  sections:
+    - url: /docs/extensions/mv3/settings_override
+    - url: /docs/extensions/mv3/devtools
+    - url: /docs/extensions/mv3/favicon
+    - url: /docs/extensions/mv3/tut_oauth
+    - url: /docs/extensions/mv3/override
+    - url: /docs/extensions/mv3/richNotifications
+    - url: /docs/extensions/mv3/nativeMessaging
+    - url: /docs/extensions/mv3/screen_capture
+    - url: /docs/extensions/mv3/geolocation
+    - url: /docs/extensions/mv3/webhid
+    - url: /docs/extensions/mv3/webusb
+    - url: /docs/extensions/mv3/file_handling
+    - url: /docs/extensions/mv3/unit-testing
+    - url: /docs/extensions/mv3/end-to-end-testing
+    - url: /docs/extensions/mv3/tut_puppeteer-testing
+- title: i18n.docs.extensions.quality
+  sections:
+    - url: /docs/extensions/mv3/user_privacy
+    - url: /docs/extensions/mv3/permission_warnings
+    - url: /docs/extensions/mv3/security
+    - url: /docs/extensions/mv3/a11y
+    - url: /docs/extensions/mv3/i18n-messages
+    - url: /docs/extensions/mv3/options
+- title: i18n.docs.extensions.distribution
+  sections:
+    - url: /docs/extensions/mv3/hosting
+    - url: /docs/extensions/mv3/external_extensions
+    - url: /docs/extensions/mv3/linux_hosting
+    - url: /docs/extensions/mv3/tut_analytics
+- title: i18n.docs.extensions.mv2
+  sections:
+    - url: /docs/extensions/mv2
+    - url: /docs/extensions/mv2/getstarted
+    - title: i18n.docs.extensions.overview
+      sections:
+        - url: /docs/extensions/mv2/overview
+        - url: /docs/extensions/mv2/themes
+        - url: /docs/extensions/mv2/faq
+        - url: /docs/extensions/mv2/single_purpose
+    - title: i18n.docs.extensions.develop
+      sections:
+        - url: /docs/extensions/mv2/devguide
+        - url: /docs/extensions/mv2/manifest
+        - url: /docs/extensions/mv2/architecture-overview
+        - url: /docs/extensions/mv2/declare_permissions
+        - url: /docs/extensions/mv2/user_interface
+        - url: /docs/extensions/mv2/tut_debugging
+        - url: /docs/extensions/mv2/samples
+    - title: i18n.docs.extensions.indepth-core
+      sections:
+        - url: /docs/extensions/mv2/messaging
+        - url: /docs/extensions/mv2/content_scripts
+        - url: /docs/extensions/mv2/background_pages
+        - url: /docs/extensions/mv2/match_patterns
+        - url: /docs/extensions/mv2/cross-origin-isolation
+    - title: i18n.docs.extensions.indepth-security
+      sections:
+        - url: /docs/extensions/mv2/xhr
+        - url: /docs/extensions/mv2/sandboxingEval
+    - title: i18n.docs.extensions.indepth-other
+      sections:
+        - url: /docs/extensions/mv2/settings_override
+        - url: /docs/extensions/mv2/devtools
+        - url: /docs/extensions/mv2/tut_oauth
+        - url: /docs/extensions/mv2/override
+        - url: /docs/extensions/mv2/richNotifications
+    - title: i18n.docs.extensions.quality
+      sections:
+        - url: /docs/extensions/mv2/user_privacy
+        - url: /docs/extensions/mv2/permission_warnings
+        - url: /docs/extensions/mv2/security
+        - url: /docs/extensions/mv2/a11y
+        - url: /docs/extensions/mv2/i18n-messages
+        - url: /docs/extensions/mv2/options
+    - title: i18n.docs.extensions.distribution
+      sections:
+        - url: /docs/extensions/mv2/hosting
+        - url: /docs/extensions/mv2/external_extensions
+        - url: /docs/extensions/mv2/linux_hosting
+        - url: /docs/extensions/mv2/tut_analytics

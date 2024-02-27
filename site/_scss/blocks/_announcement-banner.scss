@@ -1,0 +1,32 @@
+announcement-banner {
+  display: block;
+}
+
+announcement-banner[hidden] {
+  display: none;
+}
+
+announcement-banner {
+  &:not(.cookie-banner) [data-banner-close-btn] {
+    line-height: 1.125rem;
+    margin: -0.5rem 1rem -0.4rem 0;
+    opacity: 0;
+    padding: 0 0.5rem;
+    pointer-events: none;
+  }
+
+  &[active] {
+    [data-banner-close-btn] {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    [data-banner-close-btn]:hover {
+      border: 0;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+}

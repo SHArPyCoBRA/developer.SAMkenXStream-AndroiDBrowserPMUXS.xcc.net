@@ -1,0 +1,8 @@
+.tag-pill {
+  margin-bottom: px-to-rem(8px);
+  padding: px-to-rem(4px) px-to-rem(12px);
+
+  &[title] {
+    cursor: help;
+  }
+}

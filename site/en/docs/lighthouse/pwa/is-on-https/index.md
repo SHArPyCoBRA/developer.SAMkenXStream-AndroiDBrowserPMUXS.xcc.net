@@ -1,0 +1,58 @@
+---
+layout: 'layouts/doc-post.njk'
+title: Does not use HTTPS
+description: |
+  Learn how to protect your website with HTTPS.
+date: 2019-05-04
+updated: 2020-04-29
+---
+
+All websites should be protected with HTTPS, even ones that don't handle
+sensitive data. HTTPS prevents intruders from tampering with or passively
+listening in on the communications between your site and your users.
+
+A page can't qualify as a [Progressive Web App (PWA)](https://web.dev/explore/progressive-web-apps#make-it-installable) if it doesn't run on HTTPS;
+many core PWA technologies, such as service workers, require HTTPS.
+
+For more information about why all sites should be protected with HTTPS, see
+[Why HTTPS Matters](https://web.dev/articles/why-https-matters).
+
+## How the Lighthouse HTTPS audit fails
+
+[Lighthouse](/docs/lighthouse/overview/)
+flags pages that aren't on HTTPS:
+
+<figure>
+  {% Img src="image/tcFciHGuF3MxnTr1y5ue01OGLBn2/FD2HDFl8SQCgRdhV4tzZ.png", alt="Lighthouse audit showing page isn't on HTTPS", width="800", height="139" %}
+</figure>
+
+Lighthouse waits for an event from the [Chrome Remote Debugging Protocol](https://github.com/ChromeDevTools/devtools-protocol)
+indicating that the page is running on a secure connection.
+If the event isn't heard within 10&nbsp;seconds, the audit fails.
+
+{% Partial 'lighthouse-pwa/scoring.njk' %}
+
+## How to migrate your site to HTTPS
+
+Consider hosting your site on a CDN. Most CDNs are secure by default.
+
+To learn how to enable HTTPS on your servers, see Google's
+[Enabling HTTPS on Your Servers](https://web.dev/articles/enabling-https-on-your-servers).
+If you're running your own server and need a cheap and easy way to generate
+certificates, [Let's Encrypt](https://letsencrypt.org/) is a good option.
+
+If your page is already running on HTTPS but you're failing this audit,
+you may have problems with [mixed content](https://web.dev/articles/what-is-mixed-content).
+A page has mixed content when the page itself is loaded over HTTPS,
+but it requests an unprotected (HTTP) resource. Check out the following doc on the
+Chrome DevTools Security panel to learn how to debug these situations:
+[Understand Security Issues With Chrome DevTools](/docs/devtools/security/).
+
+## Resources
+
+- [Source code for **Does not use HTTPS** audit](https://github.com/GoogleChrome/lighthouse/blob/main/core/audits/is-on-https.js)
+- [Why You Should Always Use HTTPS](https://web.dev/articles/why-https-matters)
+- [Enabling HTTPS on Your Servers](https://web.dev/articles/enabling-https-on-your-servers)
+- [Understand Security Issues With Chrome DevTools](/docs/devtools/security/)
+- [What Is Mixed Content?](https://web.dev/articles/what-is-mixed-content)
+- [Let's Encrypt](https://letsencrypt.org/)

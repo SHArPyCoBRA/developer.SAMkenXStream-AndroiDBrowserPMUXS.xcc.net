@@ -1,0 +1,37 @@
+- title: i18n.docs.android.customtabs
+  sections:
+    - url: /docs/android/custom-tabs
+    - url: /docs/android/custom-tabs/browser-support
+    - title: i18n.docs.android.guides
+      sections:
+        - url: /docs/android/custom-tabs/guide-get-started
+        - url: /docs/android/custom-tabs/guide-ui-customization
+        - url: /docs/android/custom-tabs/guide-interactivity
+        - url: /docs/android/custom-tabs/guide-warmup-prefetch
+        - url: /docs/android/custom-tabs/guide-partial-custom-tabs
+        - url: /docs/android/custom-tabs/guide-engagement-signals
+    - title: i18n.docs.android.howtos
+      sections:
+        - url: /docs/android/custom-tabs/howto-custom-tab-native-apps
+        - url: /docs/android/custom-tabs/howto-custom-tab-from-webview
+        - url: /docs/android/custom-tabs/howto-custom-tab-check
+        - url: /docs/android/custom-tabs/howto-custom-tab-low-level-api
+        - url: /docs/android/custom-tabs/howto-custom-tab-request-headers
+- title: i18n.docs.android.trustedwebactivity
+  sections:
+    - url: /docs/android/trusted-web-activity
+    - url: /docs/android/trusted-web-activity/quick-start
+    - url: /docs/android/trusted-web-activity/android-for-web-devs
+    - url: /docs/android/trusted-web-activity/integration-guide
+    - url: /docs/android/trusted-web-activity/lay-of-the-land
+    - url: /docs/android/trusted-web-activity/whats-new
+    - title: i18n.docs.android.howtos
+      sections:
+        - url: /docs/android/trusted-web-activity/multi-origin/
+        - url: /docs/android/trusted-web-activity/query-parameters/
+        - url: /docs/android/trusted-web-activity/android-browser-helper-migration/
+        - url: /docs/android/trusted-web-activity/web-share-target/
+        - url: /docs/android/trusted-web-activity/play-billing/
+        - url: /docs/android/trusted-web-activity/receive-payments-play-billing/
+        - url: /docs/android/trusted-web-activity/offline-first/
+        - url: /articles/post-message-twa/

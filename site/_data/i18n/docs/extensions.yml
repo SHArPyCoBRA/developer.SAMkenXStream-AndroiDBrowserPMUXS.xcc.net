@@ -1,0 +1,41 @@
+get-started:
+  en: 'Getting Started Guides'
+samples:
+  en: 'Samples'
+samples_description:
+  en: |
+    Examples of extensions that address various use cases and call appropriate
+    Chrome APIs. Use these to learn how extensions work or as a starting point
+    for building your own extensions.
+overview:
+  en: 'Overview'
+distribution:
+  en: 'Distributing your extensions'
+quality:
+  en: 'Best practices'
+devtools:
+  en: 'Extend Chrome DevTools'
+develop:
+  en: 'Develop extensions'
+indepth:
+  en: 'Development in depth'
+indepth-core:
+  en: 'In depth: core concepts'
+indepth-security:
+  en: 'In depth: security'
+indepth-other:
+  en: 'In depth: more topics'
+migrating:
+  en: 'Migrate from Manifest V2 to Manifest V3'
+obsolete:
+  en: 'Obsolete topics'
+mv3:
+  en: 'Manifest V3'
+mv2:
+  en: 'Manifest V2'
+apps:
+  en: 'Develop Chrome Apps'
+service_workers:
+  en: 'Service workers'
+support:
+  en: 'Support and feedback'

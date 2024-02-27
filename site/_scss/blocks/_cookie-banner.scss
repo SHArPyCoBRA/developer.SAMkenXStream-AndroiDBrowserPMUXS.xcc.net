@@ -1,0 +1,33 @@
+[data-cookies-answered] .cookie-banner {
+  display: none;
+}
+
+.cookie-banner {
+  @include apply-utility('stack', '700');
+  background-color: var(--color-bg);
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  padding: get-size(400);
+  position: fixed;
+  width: 100%;
+
+  @include media-query('md') {
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+.cookie-banner__controls {
+  margin-top: get-size(300);
+
+  @include media-query('md') {
+    margin-left: get-size(300);
+    margin-top: 0;
+  }
+
+  > button {
+    margin: get-size(100) 1rem get-size(100) 0;
+    min-width: 8rem;
+  }
+}

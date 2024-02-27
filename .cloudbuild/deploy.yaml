@@ -1,0 +1,36 @@
+# This deploys the site. Roughly equivalent to
+# https://github.com/GoogleChrome/web.dev/blob/main/.cloudbuild/deploy.yaml
+
+timeout: 2700s # set build timeout to 45 mins
+steps:
+  - name: node:16.14.2
+    entrypoint: npm
+    args: ['ci']
+
+  - name: node:16.14.2
+    entrypoint: npm
+    args: ['run', 'cloud-secrets']
+
+  - name: node:16.14.2
+    entrypoint: npm
+    args: ['run', 'production']
+    env:
+      - 'NODE_OPTIONS="--max_old_space_size=8192"' # https://github.com/GoogleChrome/developer.chrome.com/issues/2439
+
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        # This snippet lets us pass additional args via the Cloud Build console
+        # in the _EXTRA_GCLOUD_ARGS var.
+        # nb. We don't have to specify --project; it's part of the environment.
+        gcloud app deploy ${_EXTRA_GCLOUD_ARGS}
+
+substitutions:
+  _EXTRA_GCLOUD_ARGS: # default empty
+
+options:
+  machineType: 'E2_HIGHCPU_32'
+  env:
+    - 'PROJECT_ID=$PROJECT_ID'

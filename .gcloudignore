@@ -1,0 +1,45 @@
+# Top-level files
+/.editorconfig
+/.eslintignore
+/.eslintrc.js
+/.gcloudignore
+/.gitignore
+/.huskyrc.js
+/.nvmrc
+/.percy.js
+/.prettierrc.js
+/.remarkrc.js
+/.stylelintrc.js
+/algolia.js
+/ava.config.js
+/cloud-secrets.js
+/CODE_OF_CONDUCT.md
+/CONTRIBUTING.md
+/database.rules.json
+/gulp-tasks
+/gulpfile.js
+/LICENSE
+/lighthouserc.js
+/netlify.toml
+/README.md
+/rollup.config.js
+/tsconfig.json
+/version-check.js
+
+# Top-level directories
+/.cloudbuild
+/.git
+/.github
+/.nyc_output
+/node_modules
+/gulp-tasks
+/tests
+/tools
+/types
+
+# Source files already compiled in /dist
+/site/**/*.md
+/site/**/*.html
+/site/**/*.png
+/site/_scss
+

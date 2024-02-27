@@ -1,0 +1,884 @@
+# There are two types of redirects:
+#
+#  (1) Simple redirects, e.g., "from: /foo"
+#      - These don't match subpaths, like "/foo/bar"
+#      - But it will match similar URLs "/foo", "/foo/" and "/foo/index.html"
+#
+#  (2) Group redirects, e.g., "from: /foo/...", which will match the top-level
+#      path (with the same rules as (1)) as well as any descendant paths
+#
+# Redirects are checked top-to-bottom. For more information on the extended
+# syntax found here, see NPM `redirects-yaml`.
+#
+# WARNING! Redirects DO NOT take priority over static content.
+# For example, if you try to redirect "/foo" but the site contains a static file
+# "/foo/index.html", the static file will always win.
+#
+# For anchors that let you redirect from #section to #section,
+# see developer.chrome.com/docs/handbook/how-to/create-anchor-redirects/.
+
+redirects:
+
+# Simple redirects
+
+- from: /blog/pwa-manifest-id/
+  to: /articles/pwa-manifest-id/
+
+- from: /docs/privacy-sandbox/first-party-sets/
+  to: /docs/privacy-sandbox/related-website-sets/
+
+- from: /docs/privacy-sandbox/first-party-sets-integration/
+  to: /docs/privacy-sandbox/related-website-sets-integration/
+
+- from: /docs/privacy-sandbox/trust-tokens/
+  to: /docs/privacy-sandbox/private-state-tokens/
+
+- from: /articles/origin-private-file-system/
+  to: https://web.dev/origin-private-file-system/
+
+- from: /en/articles/multi-screen-window-placement/
+  to: /articles/window-management/
+
+- from: /articles/multi-screen-window-placement/
+  to: articles/window-management/
+
+- from: /blog/wordpress-playground/
+  to: https://web.dev/wordpress-playground/
+
+- from: /blog/navigation-preload/
+  to: https://web.dev/navigation-preload/
+
+- from: /maskable-icon/
+  to: https://web.dev/maskable-icon/
+
+- from: /activeTab
+  to: /docs/extensions/reference/activeTab
+
+- from: /android/overview
+  to: /docs/multidevice/android/overview/
+
+- from: /apps/about_apps
+  to: /docs/apps/overview/
+
+- from: /docs/extensions/mv3/known-issues/
+  to: /docs/extensions/migrating/known-issues/
+
+- from: /docs/extensions/mv3/background_migration
+  to: /docs/extensions/migrating/to-service-workers
+
+- from: /docs/extensions/mv3/migrating_to_service_workers
+  to: /docs/extensions/migrating/to-service-workers
+
+- from: /docs/extensions/mv3/background_pages
+  to: /docs/extensions/mv3/service_workers
+
+- from: /docs/extensions/mv3/overview
+  to: /docs/extensions/mv3/architecture-overview
+
+- from: /docs/extensions/mv3/mv2-sunset/
+  to: /docs/extensions/migrating/mv2-sunset/
+
+- from: /docs/extensions/mv3/xhr
+  to: /docs/extensions/mv3/network-requests
+
+- from: /docs/extensions/examples
+  to: /docs/extensions/samples/
+
+- from: /blog/fedcm-origin-trial
+  to: /docs/privacy-sandbox/fedcm
+
+- from: /docs/privacy-sandbox/attribution-reporting/summary-reports/
+  to: /docs/privacy-sandbox/summary-reports/
+
+- from: /docs/privacy-sandbox/status
+  to: https://privacysandbox.com/open-web/#the-privacy-sandbox-timeline
+
+- from: /docs/privacy-sandbox/use-shared-storage/
+  to: /docs/privacy-sandbox/shared-storage/
+
+- from: /android
+  to: /docs/android
+
+# FYI (simeonv): Until https://github.com/samthor/redirects-yaml/pull/2 is merged, the hash on the
+# redirect destination will be ignored
+- from: /docs/extensions/mv3/manifest/content_security_policy
+  to: /docs/extensions/mv3/intro/mv3-migration/#content-security-policy
+
+- from: /docs/multidevice/android/customtabs/
+  to: /docs/android/custom-tabs/overview
+
+- from: /multidevice/android/customtabs/
+  to: /docs/android/custom-tabs/overview
+
+- from: /docs/android/custom-tabs/low-level-api/
+  to: /docs/android/custom-tabs/howto-custom-tab-low-level-api/
+
+- from: /docs/android/custom-tabs/headers/
+  to: /docs/android/custom-tabs/howto-request-headers/
+
+- from: /docs/android/custom-tabs/best-practices/
+  to: /docs/android/#how-tos
+
+- from: /docs/webstore/overview/
+  to: /docs/webstore/about_webstore/
+
+- from: /docs/webstore/pricing/
+  to: /docs/webstore/money/
+
+- from: /docs/devtools/javascript/blackbox-chrome-extension-scripts/
+  to: /docs/devtools/javascript/ignore-chrome-extension-scripts/
+
+- from: /summit
+  to: /devsummit/
+
+- from: /blog/wasm-debugging-2020/
+  to: /blog/wasm-debugging/
+
+- from: /docs/privacy-sandbox/fledge-best-practices/
+  to: /docs/privacy-sandbox/protected-audience-api/latency/
+
+- from: /blog/fledge-api/
+  to: /docs/privacy-sandbox/protected-audience-api/
+
+- from: /docs/privacy-sandbox/attribution-reporting-introduction/
+  to: /docs/privacy-sandbox/attribution-reporting/
+
+- from: /docs/privacy-sandbox/attribution-reporting-in-short/
+  to: /docs/privacy-sandbox/attribution-reporting/
+
+- from: /docs/privacy-sandbox/attribution-reporting-event-guide/
+  to: /docs/privacy-sandbox/attribution-reporting-experiment/
+
+- from: /docs/privacy-sandbox/attribution-reporting-event-introduction/
+  to: /docs/privacy-sandbox/attribution-reporting-experiment/
+
+- from: /docs/privacy-sandbox/attribution-reporting-changes-january-2022/
+  to: /blog/attribution-reporting-jan-2022-updates/
+
+- from: /docs/privacy-sandbox/maximize-ad-relevance/
+  to: https://privacysandbox.com/news/maximize-ad-relevance-after-third-party-cookies
+
+- from: /blog/capture-handle/
+  to: /docs/web-platform/capture-handle/
+
+- from: /blog/shared-element-transitions-for-spas/
+  to: /docs/web-platform/view-transitions/
+
+- from: /docs/privacy-sandbox/gnatcatcher/
+  to: /docs/privacy-sandbox/ip-protection/
+
+# Removal of /overview pages
+
+- from: /docs/android/custom-tabs/overview/
+  to: /docs/android/custom-tabs/
+
+- from: /docs/android/trusted-web-activity/overview/
+  to: /docs/android/trusted-web-activity/
+
+- from: /multidevice/webview/overview/
+  to: /multidevice/android/
+
+- from: /multidevice/webview/overview/
+  to: /multidevice/webview/
+
+- from: /blog/origin-trials/
+  to: /docs/web-platform/origin-trials/
+
+- from: /blog/origin-trial-troubleshooting/
+  to: /docs/web-platform/origin-trial-troubleshooting/
+
+- from: /blog/third-party-origin-trials/
+  to: /docs/web-platform/third-party-origin-trials/
+
+# CWS payments/apps purge
+- from: /docs/webstore/hosted_apps
+  to: /docs/webstore
+- from: /docs/webstore/migrating
+  to: /docs/webstore
+- from: /docs/webstore/get_started_simple
+  to: /docs/webstore/publish/
+- from: /docs/webstore/apps_vs_extensions
+  to: /docs/webstore
+- from: /docs/webstore/distribution
+  to: /docs/webstore
+- from: /docs/webstore/launching
+  to: /docs/webstore
+- from: /docs/webstore/choosing
+  to: /docs/webstore
+- from: /docs/webstore/samples
+  to: /docs/webstore
+- from: /docs/webstore/get_started
+  to: /docs/webstore
+- from: /docs/webstore/inline_installation
+  to: /docs/webstore
+- from: /docs/webstore/authentication
+  to: /docs/webstore
+- from: /docs/webstore/one_time_payments
+  to: /docs/webstore
+- from: /docs/webstore/payments-iap
+  to: /docs/webstore
+
+# Fixes #675
+- from: /extensions/manifestVersion
+  to: /docs/extensions/mv3/manifest/version/
+
+- from: /docs/extensions/mv3/mv3-migration/
+  to: /docs/extensions/migrating/
+
+# Fixes #675
+- from: /apps/manifestVersion
+  to: /docs/apps/manifestVersion
+
+# The new site doesn't break out Platform Apps APIs, but instead just locates them at the bottom of
+# the main Extensions reference page.
+- from: /apps/api_index
+  to: /docs/extensions/reference/#platform_apps_apis
+
+- from: /apps/app_codelab1_setup
+  to: /docs/apps/app_codelab_intro
+
+- from: /apps/arc_in_app_payments
+  to: https://developer.android.com/chrome-os/intro
+
+- from: /apps/getstarted_arc
+  to: https://developer.android.com/chrome-os/intro.html
+
+- from: /apps/google_wallet
+  to: /docs/webstore/payments-iap
+
+- from: /apps/npapi
+  to: https://blog.chromium.org/2013/09/saying-goodbye-to-our-old-friend-npapi.html
+
+- from: /apps/packaging
+  to: /docs/extensions/mv2/hosting
+
+- from: /chrome/apps/
+  to: /docs/apps/about_apps
+
+# DevTools redirects
+
+- from: /docs/devtools/storage/cookies/
+  to: /docs/devtools/application/cookies/
+
+- from: /docs/devtools/customize/placement/
+  to: /docs/devtools/customize/#placement
+
+- from: /docs/devtools/customize/dark-theme/
+  to: /docs/devtools/customize/#dark-theme
+
+- from: /docs/devtools/javascript/ignore-chrome-extension-scripts/
+  to: /docs/devtools/settings/other/#skip-extensions
+
+- from: /docs/devtools/evaluate-performance/
+  to: /docs/devtools/performance/
+
+- from: /docs/devtools/evaluate-performance/reference/
+  to: /docs/devtools/performance/reference/
+
+- from: /docs/devtools/evaluate-performance/performance-reference/
+  to: /docs/devtools/performance/timeline-reference/
+
+- from: /docs/devtools/device-mode/geolocation/
+  to: /docs/devtools/sensors/#geolocation
+
+- from: /docs/devtools/device-mode/orientation/
+  to: /docs/devtools/sensors/#orientation
+
+- from: /docs/devtools/css/overrides/
+  to: /docs/devtools/css/issues/
+
+- from: /docs/devtools/speed/get-started
+  to: /docs/devtools/lighthouse
+
+- from: /docs/devtools/console/live-expressions/docs/devtools/accessibility/focus/
+  to: /docs/devtools/accessibility/focus/
+
+- from: /docs/devtools/changes/blog/new-in-devtools-65/
+  to: /blog/new-in-devtools-65/
+
+- from: /docs/devtools/panels/sources
+  to: /docs/devtools/sources
+
+- from: /docs/devtools/javascript/sources
+  to: /docs/devtools/sources
+
+- from: /docs/devtools/css/print-preview
+  to: /docs/devtools/rendering
+
+- from: /docs/devtools/network-performance/reference
+  to: /docs/devtools/network/reference/
+
+- from: /docs/devtools/network/resource-loading/
+  to: /docs/devtools/network/reference/
+
+- from: /docs/devtools/device-mode/device-input-and-sensors/
+  to: /docs/devtools/device-mode/
+
+- from: /docs/devtools/device-mode/emulate-mobile-viewports/
+  to: /docs/devtools/device-mode/
+
+- from: /docs/devtools/console/console-write/
+  to: /docs/devtools/console/api/
+
+- from: /docs/devtools/console/track-exceptions/
+  to: /docs/devtools/console/api/
+
+- from: /docs/devtools/console/track-executions/
+  to: /docs/devtools/console/api/
+
+- from: /docs/devtools/console/events/
+  to: /docs/devtools/console/utilities/
+
+- from: /docs/devtools/console/expressions/
+  to: /docs/devtools/console/javascript/
+
+- from: /docs/devtools/evaluate-performance/timeline-tool/
+  to: /docs/devtools/evaluate-performance/reference/
+
+- from: /docs/devtools/inspect-styles/edit-styles/
+  to: /docs/devtools/css/reference/
+
+- from: /docs/devtools/javascript/pretty-print/
+  to: /docs/devtools/javascript/reference/#format
+
+- from: /docs/devtools/manage-data/local-storage/
+  to: /docs/devtools/storage/localstorage/
+
+- from: /docs/devtools/network/network-conditions/
+  to: /docs/devtools/network/reference/
+
+- from: /docs/devtools/network/understanding-resource-timing/
+  to: /docs/devtools/network/reference/#timing
+
+- from: /docs/devtools/rendering-tools/forced-synchronous-layouts/
+  to: /docs/devtools/evaluate-performance/
+
+- from: /docs/devtools/rendering-tools/js-execution/
+  to: /docs/devtools/evaluate-performance/
+
+- from: /docs/devtools/rendering-tools/
+  to: /docs/devtools/evaluate-performance/
+
+- from: /docs/devtools/updates/
+  to: /tags/new-in-devtools/
+
+# TODO(kaycebasques): Update these old DevTools redirects
+
+- from: /devtools/
+  to: https://developers.google.com/web/tools/chrome-devtools
+
+- from: /devtools/docs/blackboxing
+  to: https://developers.google.com/web/tools/chrome-devtools/javascript/reference#ignore-list
+
+- from: /devtools/docs/commandline-api
+  to: https://developers.google.com/web/tools/chrome-devtools/console/utilities
+
+- from: /devtools/docs/console-api
+  to: https://developers.google.com/web/tools/chrome-devtools/console/api
+
+- from: /devtools/docs/debugger-protocol
+  to: https://chromedevtools.github.io/devtools-protocol/
+
+- from: /devtools/docs/device-mode
+  to: https://developers.google.com/web/tools/chrome-devtools/device-mode
+
+- from: /devtools/docs/elements-styles
+  to: https://developers.google.com/web/tools/chrome-devtools/css/reference
+
+- from: /devtools/docs/mobile-emulation
+  to: https://developers.google.com/web/tools/chrome-devtools/device-mode
+
+- from: /devtools/docs/resources
+  to: https://developers.google.com/web/tools/chrome-devtools/dom
+
+- from: /devtools/docs/remote-debugging
+  to: https://developers.google.com/web/tools/chrome-devtools/remote-debugging
+
+- from: /extensions/api_index
+  to: /docs/extensions/reference/
+
+- from: /extensions/arc_in_app_payments
+  to: https://developer.android.com/chrome-os/intro.html
+
+- from: /extensions/arc_playservices
+  to: https://developer.android.com/chrome-os/intro.html
+
+- from: /extensions/autoupdate
+  to: /docs/extensions/mv3/hosting
+
+- from: /extensions/crx
+  to: /docs/extensions/mv3/hosting
+
+- from: /extensions/event_pages/
+  to: /docs/extensions/mv2/background_pages/
+
+- from: /extensions/getstarted_arc
+  to: https://developer.android.com/chrome-os/intro.html
+
+- from: /extensions/manifest/file_system_provider
+  to: /docs/extensions/reference/fileSystemProvider
+
+- from: /extensions/npapi
+  to: https://blog.chromium.org/2013/09/saying-goodbye-to-our-old-friend-npapi.html
+
+- from: /extensions/optionsV2
+  to: /docs/extensions/mv2/options
+
+- from: /extensions/packaging
+  to: /docs/extensions/mv3/hosting
+
+- from: /docs/extensions/mv3/mv3-migration-checklist
+  to: /docs/extensions/migrating/checklist
+
+- from: /extensions/migrating_to_manifest_v3
+  to: /docs/extensions/migrating/checklist
+
+- from: /docs/extensions/mv3/mv3-migration-checklist
+  to: /docs/extensions/migrating/checklist
+
+- from: /docs/extensions/mv2/migrating_to_manifest_v3
+  to: /docs/extensions/migrating/checklist
+
+- from: /docs/extensions/mv3/intro/mv3-migration
+  to: /docs/extensions/mv3/mv3-migration
+
+- from: /docs/extensions/mv3/intro/mv3-migration
+  to: /docs/extensions/migrating
+
+- from: /home
+  to: /
+
+- from: /manifest/...
+  try:
+    - /docs/extensions/mv3/manifest/...
+    - /docs/apps/manifest/...
+
+- from: /multidevice/data-compression
+  to: https://support.google.com/chrome/answer/2392284
+
+- from: /multidevice/data-compression-for-isps
+  to: https://support.google.com/chrome/answer/2392284
+
+- from: /webstore/api_index
+  to: /docs/webstore/api_index/
+
+- from: /webstore/articles
+  to: /docs/webstore/
+
+- from: /webstore/check_for_payment
+  to: /docs/webstore/money/
+
+- from: /webstore/payments-otp
+  to: /docs/webstore/one_time_payments/
+
+- from: /webstore/intl/en/program_policies
+  to: /docs/webstore/program-policies/
+
+- from: /docs/webstore/program_policies/
+  to: /docs/webstore/program-policies/
+
+- from: /docs/webstore/complaint-faq/
+  to: /docs/webstore/review-process/
+
+- from: /docs/extensions/mv3/quality_guidelines
+  to: /docs/webstore/program-policies/quality-guidelines-faq
+
+- from: /docs/webstore/affiliate-ads-faq
+  to: /docs/webstore/program-policies/affiliate-ads-faq
+
+- from: /docs/webstore/deceptive_installation_tactics
+  to: /docs/webstore/program-policies/deceptive-installation-tactics-faq
+
+- from: /docs/webstore/play_edu_tos
+  to: /docs/webstore/program-policies/play_edu_tos
+
+- from: /docs/webstore/terms
+  to: /docs/webstore/program-policies/terms
+
+- from: /docs/webstore/user_data
+  to: /docs/webstore/program-policies/user-data-faq
+
+- from: /docs/webstore/trader-disclosure
+  to: /docs/webstore/program-policies/trader-disclosure
+
+- from: /docs/webstore/spam-faq
+  to: /docs/webstore/program-policies/spam-faq
+
+- from: /docs/webstore/webstore_api/items/get/
+  to: /docs/webstore/api_index/#get
+
+- from: /docs/webstore/webstore_api/items/insert/
+  to: /docs/webstore/api_index/#insert
+
+- from: /docs/webstore/webstore_api/items/publish/
+  to: /docs/webstore/api_index/#publish
+
+- from: /docs/webstore/webstore_api/items/update/
+  to: /docs/webstore/api_index/#update
+
+- from: /docs/webstore/webstore_api/items/#resource
+  to: /docs/webstore/api_index/#resource
+
+- from: /docs/webstore/webstore_api/items/
+  to: /docs/webstore/api_index/#items
+
+- from: /webview/overview
+  to: /docs/multidevice/android/overview/
+
+- from: /docs/extensions/declarativenetrequest
+  to: /docs/extensions/reference/declarativeNetRequest
+
+  # MV2 docs that have been removed, but their MV3 version still exists
+
+- from: /docs/extensions/mv2/single_purpose
+  to: /docs/extensions/mv3/quality_guidelines/
+
+  # Group redirects
+
+- from: /apps/apps/...
+  to: /apps...
+
+- from: /apps/...
+  try:
+    - /docs/apps/manifest/...
+    - /docs/extensions/reference/...
+    - /docs/extensions/mv2/manifest/...  # nb. Deprecated /apps/ platform is essentially mv2 only
+    - /docs/extensions/mv2/...
+    - /docs/extensions/...
+  else: /docs/apps/...
+
+# Redirecting all old DevTools docs to the homepage
+- from: /devtools/...
+  to: https://developers.google.com/web/tools/chrome-devtools/
+
+- from: /extensions/extensions/...
+  to: /extensions/...
+
+- from: /extensions/...
+  try:
+    - /docs/extensions/reference/...
+    - /docs/extensions/mv3/manifest/...
+    - /docs/extensions/mv3/...
+    - /docs/apps/...
+    - /docs/apps/manifest/...
+  else: /docs/extensions/...
+
+- from: /docs/extensions/...
+  try:
+    - /docs/extensions/reference/...
+    - /docs/extensions/mv3/manifest/...
+    - /docs/extensions/mv3/...
+    - /docs/extensions/mv2/manifest/...
+    - /docs/extensions/mv2/...
+    - /docs/apps/...
+    - /docs/apps/manifest/...
+  else: /docs/extensions/...
+
+- from: /manifest/...
+  try:
+    - /docs/extensions/mv3/manifest/...
+  else: /docs/apps/manifest/...
+
+- from : /multidevice/...
+  to: /docs/multidevice/...
+
+- from: /native-client/...
+  to: /docs/native-client/...
+
+# - from: /privacy-sandbox/...
+#  to: /docs/privacy-sandbox/...
+
+- from: /webstore/...
+  to: /docs/webstore/...
+
+- from: /webstore/docs/...
+  to: /docs/webstore/...
+
+- from: /webstore/webstore/...
+  to: /docs/webstore/...
+
+# Redirecting blog posts that were moved to articles
+
+- from: /blog/blinkng/...
+  to: /articles/blinkng/...
+
+- from: /articles/faster-wasm-debugging/...
+  to: /blog/faster-wasm-debugging/...
+
+- from: /articles/performance-insights/...
+  to: /blog/performance-insights/...
+
+- from: /blog/hidden-until-found/...
+  to: /articles/hidden-until-found/...
+
+- from: /blog/inert/...
+  to: /articles/inert/...
+
+- from: /blog/layoutng/...
+  to: /articles/layoutng/...
+
+- from: /blog/renderingng-architecture/...
+  to: /articles/renderingng-architecture/...
+
+- from: /blog/renderingng-data-structures/...
+  to: /articles/renderingng-data-structures/...
+
+- from: /blog/renderingng/...
+  to: /articles/renderingng/...
+
+- from: /blog/videong/...
+  to: /articles/videong/...
+
+- from: /blog/inside-oct-2022/...
+  to: /blog/insider-oct-2022/...
+
+- from: /blog/inp-in-frameworks/...
+  to: /articles/inp-in-frameworks/...
+
+- from: /blog/webdriver-bidi/
+  to: /articles/webdriver-bidi/
+
+- from: /blog/page-lifecycle-api/
+  to: /articles/page-lifecycle-api/
+
+- from: /blog/deprecating-unload
+  to: /articles/deprecating-unload
+
+- from: /blog/css-color-mix
+  to: /articles/css-color-mix
+
+- from: /blog/chrome-ux-report-api
+  to: /docs/crux/guides/chrome-ux-report-api
+
+- from: /blog/chrome-ux-report-bigquery
+  to: /docs/crux/guides/chrome-ux-report-bigquery
+
+- from: /blog/chrome-ux-report-history-api
+  to: /docs/crux/guides/chrome-ux-report-history-api
+
+- from: /blog/chrome-ux-report-looker-studio-dashboard
+  to: /docs/crux/guides/chrome-ux-report-looker-studio-dashboard
+
+- from: /blog/chrome-ux-report-pagespeed-insights
+  to: /docs/crux/guides/chrome-ux-report-pagespeed-insights
+
+- from: /blog/css-layout-gets-smarter-with-calc
+  to: /articles/css-layout-gets-smarter-with-calc
+
+- from: /blog/css-text-wrap-balance
+  to: /articles/css-text-wrap-balance
+
+- from: /blog/css-update-media-query
+  to: /articles/css-update-media-query
+
+- from: /blog/webauthn
+  to: /articles/webauthn
+
+- from: /blog/webauthn-conditional-ui
+  to: /articles/webauthn-conditional-ui
+
+- from: /blog/webauthn-tab
+  to: /articles/webauthn-tab
+
+# Redirecting the intersection observer post from d.c.c. to web.dev
+- from: /intersectionobserver/
+  to: https://web.dev/intersectionobserver/
+
+# Lighthouse redirects
+- from: /docs/lighthouse/best-practices/password-inputs-can-be-pasted-into/
+  to: /docs/lighthouse/best-practices/paste-preventing-inputs/
+- from: /docs/lighthouse/performance/time-to-first-byte
+  to: /docs/lighthouse/performance/server-response-time
+
+# Fugu redirects
+- from: /blog/fugu-showcase/
+- to: /fugu-showcase/
+
+# Redirect old platform documentation to MDN
+
+- from: /docs/web-platform/webgpu/
+  to: https://developer.mozilla.org/docs/Web/API/WebGPU_API
+
+# Generic
+
+- from: /...
+  try:
+    - /docs/extensions/...
+    - /docs/extensions/reference/...
+    - /docs/extensions/mv3/manifest/...
+    - /docs/extensions/mv3/...
+    - /docs/apps/manifest/...
+    - /docs/apps/...
+
+- from: /insider-july-2022/
+  to: /blog/insider-july-2022/
+
+- from: /insider/...
+  to: /tags/insider/
+
+# Tag Redirects
+
+- from: /tags/removals/
+  to: /tags/deprecations-removals/
+
+- from: /tags/deprecations/
+  to: /tags/deprecations-removals/
+
+- from: /tags/extensions/
+  to: /tags/extensions-news/
+
+# Redirects from old to new Extensions migration guide
+
+- from: /docs/extensions/mv3/mv3-migration/
+  to: /docs/extensions/migrating/
+
+- from: /docs/extensions/mv3/mv3-migration-checklist/
+  to: /docs/extensions/migrating/checklist/
+
+- from: /docs/extensions/mv3/migrating_to_service_workers/
+  to: /docs/extensions/migrating/to-service-workers/
+
+- from: /docs/extensions/mv3/mv2-sunset/
+  to: /docs/extensions/migrating/mv2-sunset/
+
+- from: /docs/extensions/mv3/known-issues/
+  to: /docs/extensions/migrating/known-issues/
+
+# Extension samples
+- from: /docs/extensions/mv3/samples/
+  to: /docs/extensions/samples/
+
+# Redirects for docs now on MDN
+
+- from: /docs/web-platform/popover-api/backdrop-pseudo-element
+  to: https://developer.mozilla.org/docs/Web/CSS/::backdrop
+
+- from: /docs/web-platform/popover-api/hidepopover-method/
+  to: https://developer.mozilla.org/docs/Web/API/HTMLElement/hidePopover
+
+- from: /docs/web-platform/pop-up-api/hidepopover-method/
+  to: https://developer.mozilla.org/docs/Web/API/HTMLElement/hidePopover
+
+- from: /docs/web-platform/popover-api/open-pseudo-class
+  to: https://developer.mozilla.org/docs/Web/CSS/:popover-open
+
+- from: /docs/web-platform/popover-api/popover-attribute
+  to: https://developer.mozilla.org/docs/Web/HTML/Global_attributes/popover
+
+- from: /docs/web-platform/pop-up-api/popover-property/
+  to: https://developer.mozilla.org/docs/Web/API/Popover_API
+
+- from: /docs/web-platform/popover-api/popover-property/
+  to: https://developer.mozilla.org/docs/Web/API/Popover_API
+
+- from: /docs/web-platform/popover-api/popoverhide-event/
+  to: https://developer.mozilla.org/docs/Web/API/HTMLElement/toggle_event
+
+- from: /docs/web-platform/popover-api/popovershow-event/
+  to: https://developer.mozilla.org/docs/Web/API/HTMLElement/toggle_event
+
+- from: /docs/web-platform/pop-up-api/popoverhide-event/
+  to: https://developer.mozilla.org/docs/Web/API/HTMLElement/toggle_event
+
+- from: /docs/web-platform/pop-up-api/popovershow-event/
+  to: https://developer.mozilla.org/docs/Web/API/HTMLElement/toggle_event
+
+- from: /docs/web-platform/popover-api/popovertargetaction-hide-attribute/
+  to: https://developer.mozilla.org/docs/Web/HTML/Element/button#popovertargetaction
+
+- from: /docs/web-platform/popover-api/popovertargetaction-hide-property/
+  to: https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/popoverTargetAction
+
+- from: /docs/web-platform/popover-api/popovertargetaction-show-attribute/
+  to: https://developer.mozilla.org/docs/Web/HTML/Element/button#popovertargetaction
+
+- from: /docs/web-platform/popover-api/popovertargetaction-show-property/
+  to: https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/popoverTargetAction
+
+- from: /docs/web-platform/popover-api/popovertargetaction-toggle-attribute/
+  to: https://developer.mozilla.org/docs/Web/HTML/Element/button#popovertargetaction
+
+- from: /docs/web-platform/popover-api/popovertargetaction-toggle-property/
+  to: https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/popoverTargetAction
+
+- from: /docs/web-platform/pop-up-api/popoverhidetarget-attribute/
+  to: https://developer.mozilla.org/docs/Web/HTML/Element/button#popovertargetaction
+
+- from: /docs/web-platform/pop-up-api/popoverhidetarget-property/
+  to: https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/popoverTargetAction
+
+- from: /docs/web-platform/pop-up-api/popovershowtarget-attribute/
+  to: https://developer.mozilla.org/docs/Web/HTML/Element/button#popovertargetaction
+
+- from: /docs/web-platform/pop-up-api/popovershowtarget-property/
+  to: https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/popoverTargetAction
+
+- from: /docs/web-platform/pop-up-api/popovertoggletarget-attribute/
+  to: https://developer.mozilla.org/docs/Web/HTML/Element/button#popovertargetaction
+
+- from: /docs/web-platform/pop-up-api/popovertoggletarget-property/
+  to: https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/popoverTargetAction
+
+- from: /docs/web-platform/popover-api/popoverhidetarget-attribute/
+  to: https://developer.mozilla.org/docs/Web/HTML/Element/button#popovertargetaction
+
+- from: /docs/web-platform/popover-api/popoverhidetarget-property/
+  to: https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/popoverTargetAction
+
+- from: /docs/web-platform/popover-api/popovershowtarget-attribute/
+  to: https://developer.mozilla.org/docs/Web/HTML/Element/button#popovertargetaction
+
+- from: /docs/web-platform/popover-api/popovershowtarget-property/
+  to: https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/popoverTargetAction
+
+- from: /docs/web-platform/popover-api/popovertoggletarget-attribute/
+  to: https://developer.mozilla.org/docs/Web/HTML/Element/button#popovertargetaction
+
+- from: /docs/web-platform/popover-api/popovertoggletarget-property/
+  to: https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/popoverTargetAction
+
+- from: /docs/web-platform/popover-api/showpopover-method/
+  to: https://developer.mozilla.org/docs/Web/API/HTMLElement/showPopover
+
+- from: /docs/web-platform/pop-up-api/popover-attribute/
+  to: https://developer.mozilla.org/docs/Web/API/HTMLElement/showPopover
+
+- from: /docs/web-platform/popover-api/
+  to: https://developer.mozilla.org/docs/Web/API/Popover_API
+
+- from: /docs/web-platform/pop-up-api/
+  to: https://developer.mozilla.org/docs/Web/API/Popover_API
+
+- from: /docs/android/custom-tabs/integration-guide/
+  to: /docs/android/custom-tabs/guide-get-started/
+
+- from: /docs/extensions/reference/declarativeNetRequest/#limits-constants
+  to:  /docs/extensions/reference/declarativeNetRequest/#limits
+
+- from: /docs/extensions/reference/declarativeNetRequest/#limits-rules
+  to:  /docs/extensions/reference/declarativeNetRequest/#static-rules
+
+- from: /docs/extensions/reference/declarativeNetRequest/#limits-global-static-rule-limit
+  to:  /docs/extensions/reference/declarativeNetRequest/#static-rules
+
+- from: /docs/privacy-sandbox/fledge/...
+  to: /docs/privacy-sandbox/protected-audience/...
+
+- from: /docs/extensions/gethelp
+  to: /docs/extensions/support-feedback
+- from: docs/extensions/mv3/single_purpose/
+  to: docs/extensions/mv3/quality_guidelines/
+
+- from: /docs/privacy-sandbox/permissions-policy/
+  to: /articles/permissions-policy/
+
+# PR 7600 replacing Custom Tabs native apps how-to with external handler section in warmup/prefetch guide
+
+- from: /docs/android/custom-tabs/howto-custom-tab-native-apps/
+  to: /docs/android/custom-tabs/guide-warmup-prefetch/
+
+# DO NOT REMOVE. This seems pointless but we rewrite "." to "_" inside our server's code, so if the
+# URL is fine for all but incorrect syntax, we'll fix it up.
+- from: /...
+  try:
+    - /...

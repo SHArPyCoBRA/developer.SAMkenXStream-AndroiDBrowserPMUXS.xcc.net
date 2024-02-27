@@ -1,0 +1,21 @@
+developer_dashboard:
+  en: 'Developer Dashboard'
+developer_dashboard_description:
+  en: >
+    Publish and manage your extensions and themes.
+before:
+  en: 'Prepare your extension'
+enterprise:
+  en: 'Enterprise'
+publish:
+  en: 'Publish your extension'
+policies:
+  en: 'Chrome Web Store policies'
+manage:
+  en: 'Manage your item'
+promote:
+  en: 'Promote your item'
+guidelines:
+  en: 'Store item guidelines'
+sunset:
+  en: 'Phase out your extension'
